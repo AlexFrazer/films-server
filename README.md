@@ -24,6 +24,10 @@ $ ./go-docker
 ## Stopping
 ```zsh
 # list out docker containers
-$ docker image ls
-
+$ docker container ls
+# Find image and remove
+$ docker stop <id>
 ```
+
+#### Resources
+- https://www.callicoder.com/docker-golang-image-container-example/
