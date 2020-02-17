@@ -1,0 +1,16 @@
+setup:
+  addons:
+    - plan: heroku-postgresql
+      as: DATABASE
+  config:
+    S3_BUCKET: arn:aws:s3:::static.alexfrazer.dev
+build:
+  docker:
+    web: Dockerfile
+  config:
+    ENV: production
+release:
+  command:
+    - docker build -t go-docker .
+run:
+  web: docker run -d -p 8080:8080 go-docker
